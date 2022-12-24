@@ -81,24 +81,26 @@
     </nav>
 
 
-    <!--login form-->
+     <!--login form-->
 
-    <div class="login-form-container">
+     <div class="login-form-container">
 
         <div id="close-login-button" class="fas fa-times"></div>
 
         <form action="">
             <h3>Kycuni</h3>
-            <span>Emri i përdoruesit:</span>
-            <input type="email" name="" class="box" placeholder="Shtypni emailin:" id="">
+            <span>Email i përdoruesit:</span>
+            <input type="email" name="" class="box" placeholder="Shtypni emailin:" id="email">
+            
             <span>password</span>
-            <input type="password" name="" class="box" placeholder="Shtypni fjalëkalimin:" id="">
+            <input type="password" name="" class="box" placeholder="Shtypni fjalëkalimin:" id="password">
+            
             <div class="checkbox">
                 <input type="checkbox" name="" id="remember-me">
                 <label for="remember-me">Më mbaj në mend!</label>
             </div>
 
-            <input type="submit" value="Kycu" class="button">
+            <input type="submit" value="Kycu" class="button" onclick="validoLogIn()">
             <p>Harrove fjalëkalimin? <a href="#">Shtyp këtu</a></p>
             <p>Nuk keni llogari ?  <a href="register.html">Krijoni një llogari të re</a></p>
 
