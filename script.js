@@ -280,3 +280,79 @@ var swiper = new Swiper(".products-slider", {
 
 
 }
+
+
+function valido(){
+
+  var emri=document.getElementById("emri").value;
+  var regex=/^[a-zA-Z]{3,}$/
+
+  if(emri.trim()==""){
+      alert("Shkruaj emrin: ");
+  }
+  else if((regex.test(emri))){
+      alert("Emri pranohet");
+  }
+  else{
+      alert("Emri nuk pranohet");
+  }
+
+  var area=document.getElementById("area").value;
+  var regex=/^[a-zA-Z]{3,}$/
+
+  if(area.trim()==""){
+      alert("Shkruaj mesazhi: ");
+  }
+  else if((regex.test(mbiemri))){
+      alert("Mesazhi pranohet");
+  }
+  else{
+      alert("Mesazhi nuk pranohet");
+  }
+
+  var emaili=document.getElementById("email").value;
+  var regex=/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
+
+  if(emaili.trim()==""){
+      alert("Shkruaj nje email: ");
+  }
+  else if((regex.test(emaili))){
+      alert("U pranua me sukses");
+  }
+  else{
+      alert("Email nuk pranohet");
+  }
+
+  var numri=document.getElementById("nrtel").value;
+  var regex=/^0+4+[3-5 | 8-9]+[0-9]{6}$/
+
+  if(numri.trim()==""){
+      alert("Shkruaj numrin e telefonit");
+  }
+  else if((regex.test(numri))){
+      alert("Numri pranohet");
+  }
+  else{
+      alert("Numri gabim");
+  }
+  
+  var tekst=document.getElementById("text").value;
+  var regex=/^[a-zA-Z0-9]{3,}$/
+
+  if(tekst.trim()==""){
+      alert("Shkruaj subjektin: ");
+  }
+  else if((regex.test(tekst))){
+      alert("Subjekti pranohet");
+  }
+  else{
+      alert("Subjekti nuk pranohet");
+  }
+
+
+
+
+ 
+
+
+}
