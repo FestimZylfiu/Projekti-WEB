@@ -297,18 +297,7 @@ function valido(){
       alert("Emri nuk pranohet");
   }
 
-  var area=document.getElementById("area").value;
-  var regex=/^[a-zA-Z]{3,}$/
 
-  if(area.trim()==""){
-      alert("Shkruaj mesazhi: ");
-  }
-  else if((regex.test(mbiemri))){
-      alert("Mesazhi pranohet");
-  }
-  else{
-      alert("Mesazhi nuk pranohet");
-  }
 
   var emaili=document.getElementById("email").value;
   var regex=/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
@@ -350,7 +339,18 @@ function valido(){
   }
 
 
+  var area=document.getElementById("area").value;
+  var regex=/^[a-zA-Z]{3,}$/
 
+  if(area.trim()==""){
+      alert("Shkruaj mesazhi: ");
+  }
+  else if((regex.test(mbiemri))){
+      alert("Mesazhi pranohet");
+  }
+  else{
+      alert("Mesazhi nuk pranohet");
+  }
 
  
 
