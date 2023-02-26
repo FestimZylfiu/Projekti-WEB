@@ -17,7 +17,19 @@
 
 }
 
+.kontentt{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
+#kozmetikaa{
+	padding: 0 0 0 5px ;
+	font-size: 20px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	
+}
 
 *{
 font-family: 'Poppins', sans-serif;
@@ -511,7 +523,7 @@ color:#fff;
 
 
 .newsletter{
-    background:url(fotot/ABIQARSHIA.jpeg) no-repeat;
+	background-image: url("../ABIQARSHIA.png");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -1085,8 +1097,21 @@ color:#fff;
 
 
 
+/*Featured - FILLIM*/
+
+.feature .row .imagee{
+    flex:1 1 35rem;
+}
+
+.feature .row .imagee img{
+    width:100%;
+}
 
 
+
+
+
+/*Featured - MBARIM/*
 
 
 
