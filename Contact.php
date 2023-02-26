@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
 
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
@@ -19,7 +19,7 @@
 
         <div class="header-1">
     
-            <a href="index.html" class="logo"><img src="Fotot/plazalogo.png" id="LOGO"></a>
+            <a href="../index.php" class="logo"><img src="../img/plazalogo.png" id="LOGO"></a>
     
                 <form action="" class="search-form">
     
@@ -46,11 +46,11 @@
         <div class="header-2">
 
             <nav class="navbar">
-                <a href="index.html">Home</a>
-                <a href="#featured">Featured</a>
-                <a href="#arrivals">Arrivals</a>
-                <a href="#Contact">Contact</a>
-                <a href="Produktet.html">Produktet</a>
+                <a href="../index.php">Home</a>
+                <a href="aboutus.php">About Us</a>
+                <a href="arrivals.php">Arrivals</a>
+                <a href="Produktet.php">Products</a>
+				<a href="#Contact">Contact</a>
 
     
     
@@ -98,7 +98,7 @@
 
             <input type="submit" value="Kycu" class="button" onclick="validoLogIn()">
             <p>Harrove fjalëkalimin? <a href="#">Shtyp këtu</a></p>
-            <p>Nuk keni llogari ?  <a href="register.html">Krijoni një llogari të re</a></p>
+            <p>Nuk keni llogari ?  <a href="register.php">Krijoni një llogari të re</a></p>
 
         </form>
 
@@ -117,18 +117,18 @@
         </h1> 
         <div class="row">
             <div class="image">
-                <img src="Fotot/plazalogo.png" alt="">
+                <img src="../img/plazalogo.png" alt="">
             </div>
-            <form action="">
+            <form action="contact_response.php" method="post">
                 <div class="input-box">
-                    <input type="text" id="emri" placeholder="Emri">
-                    <input type="email" id="email" placeholder="Email">
+                    <input type="text" id="emri" name="yourName" placeholder="Emri">
+                    <input type="email" id="email" name="yourEmail" placeholder="Email">
                 </div>
                 <div class="input-box">
-                    <input type="number" id="nrtel" placeholder="Numri telefonit">
-                    <input type="text" id="text" placeholder="Subjekti">
+                    <input type="number" id="nrtel" name="yourPhone" placeholder="Numri telefonit">
+                    <input type="text" id="text" name="subject" placeholder="Subjekti">
                 </div>
-                <textarea placeholder="Mesazhi juaj këtu..." name="" id="area" cols="30" rows="10"></textarea>
+                <textarea placeholder="Mesazhi juaj këtu..." name="message" id="area" cols="30" rows="10"></textarea>
                 <input type="submit" class="button"  value="Dërgo" onclick="valido()">
             </form>
         </div>
