@@ -7,93 +7,79 @@
     <title>Projekti kryesore</title>
 
     <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-
-
-    <link rel="stylesheet" href="style.css">
-        
-
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <!--Hederi fillon ketu-->
 
     <header class="header">
-
     <div class="header-1">
-
-        <a href="#" class="logo"><img src="Fotot/plazalogo.png" id="LOGO"></a>
-
+        <a href="#" class="logo"><img src="img/plazalogo.png" id="LOGO"></a>
             <form action="" class="search-form">
-
                 <input type="search" name="" placeholder="Kërko këtu..." id="search-box">
                 <label for="search-box" class="fas fa-search"></label>
             </form>
-
           <div class="icons">
-
             <div id="search-button" class="fas fa-search"></div>
             <a href="#" class="fas fa-heart"></a>
               <a href="#" class="fas fa-shopping-cart"></a>
-            <div id="login-button" class="fas fa-user"></div>
-            
-
-
-
-
-
+            <div id="login-button" class="fas fa-user"> </div>
+			 
           </div>  
-        
-
+		  <?php 
+				 session_start();
+				 if (isset($_SESSION['email'])) {
+					// Session variable exists, read its value
+					$email = $_SESSION['email'];
+					$role = $_SESSION['role'];
+					echo $email .' (' . $role. ') <p><a href = "pages/logout.php" tite = "Logout">Logout</></p>';
+				 }
+				 ?>
     </div>
 
     <div class="header-2">
-
         <nav class="navbar">
             <a href="#home">Home</a>
-            <a href="#featured">Featured</a>
-            <a href="#arrivals">Arrivals</a>
-            <a href="Contact.html">Contact</a>
-            <a href="Produktet.html">Produktet</a>
-
+            <a href="pages/aboutus.php">About Us</a>
+            <a href="pages/arrivals.php">Arrivals</a>
+            <a href="pages/produktet.php">Products</a>
+			<a href="pages/contact.php">Contact</a>
+			<?php 
+				 if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin') {
+					echo '<a href="pages/userlist.php">Dashboard</a>';
+				 }
+				 else{
+					 
+				 }
+			?>
+			
 
         </nav>
-
     </div>
-
 </header>
 
-
-
     <!--Hederi mbaron ketu -->
-
        <!---bottom navbar-->
-       
-       
        <nav class="bottom-navbar">
         <a href="#home" class="fas fa-home"></a>
         <a href="#featured" class="fas fa-list"></a>
         <a href="#arrivals" class="fas fa-tags"></a>
         <a href="#contact" class="fa-regular fa-address-book"></a>
-
-
     </nav>
-
-
      <!--login form-->
 
      <div class="login-form-container">
-
         <div id="close-login-button" class="fas fa-times"></div>
-
-        <form action="">
+        <form action="pages/loginprocess.php" method="POST">
             <h3>Kycuni</h3>
             <span>Email i përdoruesit:</span>
-            <input type="email" name="" class="box" placeholder="Shtypni emailin:" id="email">
+            <input type="email" name="email" class="box" placeholder="Shtypni emailin:" id="email">
             
             <span>password</span>
-            <input type="password" name="" class="box" placeholder="Shtypni fjalëkalimin:" id="password">
+            <input type="password" name="password" class="box" placeholder="Shtypni fjalëkalimin:" id="password">
             
             <div class="checkbox">
                 <input type="checkbox" name="" id="remember-me">
@@ -102,7 +88,7 @@
 
             <input type="submit" value="Kycu" class="button" onclick="validoLogIn()">
             <p>Harrove fjalëkalimin? <a href="#">Shtyp këtu</a></p>
-            <p>Nuk keni llogari ?  <a href="register.html">Krijoni një llogari të re</a></p>
+            <p>Nuk keni llogari ?  <a href="pages/register.php">Krijoni një llogari të re</a></p>
 
         </form>
 
@@ -122,13 +108,13 @@
 
         <div class="swiper products-slider">
             <div class="swiper-wrapper">
-                <a href="#"class="swiper-slide"><img src="fotot/fotoo1.png" alt=""></a>
-                <a href="#"class="swiper-slide"><img src="fotot/foto2.png" alt=""></a>
-                <a href="#"class="swiper-slide"><img src="fotot/foto3.png" alt=""></a>
-                <a href="#"class="swiper-slide"><img src="fotot/foto4.png" alt=""></a>
-                <a href="#"class="swiper-slide"><img src="fotot/foto5.png" alt=""></a>
+                <a href="#"class="swiper-slide"><img src="img/fotoo1.png" alt=""></a>
+                <a href="#"class="swiper-slide"><img src="img/foto2.png" alt=""></a>
+                <a href="#"class="swiper-slide"><img src="img/foto3.png" alt=""></a>
+                <a href="#"class="swiper-slide"><img src="img/foto4.png" alt=""></a>
+                <a href="#"class="swiper-slide"><img src="img/foto5.png" alt=""></a>
             </div> 
-            <img src="fotot/stand.png" class="stand" alt="">
+            <img src="img/stand.png" class="stand" alt="">
       
       </div>
 
@@ -205,7 +191,7 @@
                 </div>
 
                 <div class="image">
-                    <img src="fotot/p1.png" alt="">
+                    <img src="img/p1.png" alt="">
                 </div>
                 <div class="content">
                     <h3>Stronger With You</h3>
@@ -223,7 +209,7 @@
                     </div>
     
                     <div class="image">
-                        <img src="fotot/p2.png" alt="">
+                        <img src="img/p2.png" alt="">
                     </div>
                     <div class="content">
                         <h3>Burberry Hero</h3>
@@ -241,7 +227,7 @@
                         </div>
         
                         <div class="image">
-                            <img src="fotot/p3.png" alt="">
+                            <img src="img/p3.png" alt="">
                         </div>
                         <div class="content">
                             <h3>Coco Chanel</h3>
@@ -259,7 +245,7 @@
                             </div>
             
                             <div class="image">
-                                <img src="fotot/p4.png" alt="">
+                                <img src="img/p4.png" alt="">
                             </div>
                             <div class="content">
                                 <h3>Chance Chanel</h3>
@@ -277,7 +263,7 @@
                                 </div>
                 
                                 <div class="image">
-                                    <img src="fotot/p5.png" alt="">
+                                    <img src="img/p5.png" alt="">
                                 </div>
                                 <div class="content">
                                     <h3>Dior - Fahrenheit</h3>
@@ -294,7 +280,7 @@
                                         <a href="#" class="fas fa-eye"></a>
                                     </div>
                                     <div class="image">
-                                        <img src="fotot/p7.png" alt="">
+                                        <img src="img/p7.png" alt="">
                                     </div>
                                     <div class="content">
                                         <h3>Si Passione</h3>
@@ -321,8 +307,7 @@
     
     <!--newsletter section starts-->
 
-    <section class="newsletter">
-
+  <section class="newsletter">
         <form action="">
             <h3>Abonohuni për produktet e fundit</h3>
             <input type="email" name="" placeholder="Shtypni emailin tuaj" id="" class="box">
@@ -342,7 +327,7 @@
 
     <section class="arrivals" id="arrivals">
 
-        <h1 class="heading"> <span>Arritjet e reja</span> </h1>
+        <h1 class="heading"> <span>Favorite</span> </h1>
     
         <div class="swiper arrivals-slider">
     
@@ -350,7 +335,7 @@
     
                 <a href="#" class="swiper-slide box">
                     <div class="image">
-                        <img src="fotot/prf1.png" alt="">
+                        <img src="img/prf1.png" alt="">
                     </div>
                     <div class="content">
                         <h3>Versace Pink Absolu</h3>
@@ -367,7 +352,7 @@
     
                 <a href="#" class="swiper-slide box">
                     <div class="image">
-                        <img src="fotot/prf2.png" alt="">
+                        <img src="img/prf2.png" alt="">
                     </div>
                     <div class="content">
                         <h3>Valentino Gold</h3>
@@ -384,7 +369,7 @@
     
                 <a href="#" class="swiper-slide box">
                     <div class="image">
-                        <img src="fotot/prf3.png" alt="">
+                        <img src="img/prf3.png" alt="">
                     </div>
                     <div class="content">
                         <h3>Tom Ford - Lost Cherry</h3>
@@ -401,7 +386,7 @@
     
                 <a href="#" class="swiper-slide box">
                     <div class="image">
-                        <img src="fotot/prf4.png" alt="">
+                        <img src="img/prf4.png" alt="">
                     </div>
                     <div class="content">
                         <h3>Black Opium - Blue </h3>
@@ -418,7 +403,7 @@
     
                 <a href="#" class="swiper-slide box">
                     <div class="image">
-                        <img src="fotot/prf6.png" alt="">
+                        <img src="img/prf6.png" alt="">
                     </div>
                     <div class="content">
                         <h3>Tom Ford - Bitter Peach </h3>
@@ -443,7 +428,7 @@
     
                 <a href="#" class="swiper-slide box">
                     <div class="image">
-                        <img src="fotot/prf7.png" alt="">
+                        <img src="img/prf7.png" alt="">
                     </div>
                     <div class="content">
                         <h3>Hugo Boss</h3>
@@ -460,7 +445,7 @@
     
                 <a href="#" class="swiper-slide box">
                     <div class="image">
-                        <img src="fotot/prf8.png" alt="">
+                        <img src="img/prf8.png" alt="">
                     </div>
                     <div class="content">
                         <h3>Alive</h3>
@@ -477,7 +462,7 @@
     
                 <a href="#" class="swiper-slide box">
                     <div class="image">
-                        <img src="fotot/prf9.png" alt="">
+                        <img src="img/prf9.png" alt="">
                     </div>
                     <div class="content">
                         <h3>Dior JOY</h3>
@@ -494,7 +479,7 @@
     
                 <a href="#" class="swiper-slide box">
                     <div class="image">
-                        <img src="fotot/prf10.png" alt="">
+                        <img src="img/prf10.png" alt="">
                     </div>
                     <div class="content">
                         <h3>Tiffany & Co</h3>
@@ -511,7 +496,7 @@
     
                 <a href="#" class="swiper-slide box">
                     <div class="image">
-                        <img src="fotot/prf5.png" alt="">
+                        <img src="img/prf5.png" alt="">
                     </div>
                     <div class="content">
                         <h3>Valentino - Black</h3>
@@ -547,7 +532,7 @@
         </div>
     
         <div class="image">
-            <img src="fotot/prf6.png" alt="">
+            <img src="img/prf6.png" alt="">
         </div>
     
     </section>
@@ -567,7 +552,7 @@
             <div class="box">
                 <h3>Qasje të shpejtë</h3>
                 <a href="#"> <i class="fas fa-arrow-right"></i>Home</a>
-                <a href="#"> <i class="fas fa-arrow-right"></i>Feature</a>
+                <a href="#"> <i class="fas fa-arrow-right"></i>About Us</a>
                 <a href="#"> <i class="fas fa-arrow-right"></i>Arrivals</a>
                 <a href="Contact.html"> <i class="fas fa-arrow-right"></i>Contact</a>
                 
@@ -584,7 +569,7 @@
                 <h3>Contact info</h3>
                 <a href="#"> <i class="fas fa-phone"></i> +383 45 108 222</a>
                 <a href="#"> <i class="fas fa-envelope"></i>plazacosmetica@gmail.com </a>
-                <img src="fotot/lokacioni.jpg" class="map" alt="">
+                <img src="img/lokacioni.jpg" class="map" alt="">
             </div>
             
         </div>
@@ -605,7 +590,7 @@
     <!-- loader  -->
     
     <div class="loader-container">
-        <img src="fotot/parfimgif.gif" alt="">
+        <img src="img/parfimgif.gif" alt="">
     </div>
     
 
@@ -613,21 +598,10 @@
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     
     <!-- custom js file link  -->
+   
+	<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
-
-
-     
-
-
-
-
-
-
-
-    
-<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 
 
 
